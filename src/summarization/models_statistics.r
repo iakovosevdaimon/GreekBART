@@ -1,7 +1,18 @@
+# Modified version of
+# https://github.com/Tixierae/OrangeSum/blob/main/summary_statistics.R
+
+# Original copyright is appended below.
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
+
+
+
+
 path_to_summaries = './'
 
 # = = = compute length = = = 
-
+cat(" = = = = = = = = = Compute length = = = = = = = = = ")
 for (a_t in c('abstracts','titles')){
   
   cat('* * * * * ',a_t,'* * * * * \n')
@@ -17,14 +28,14 @@ for (a_t in c('abstracts','titles')){
   names(tmp) = my_files
   
   for (my_file in my_files){
-    cat('= = =',my_file,'= = =\n')
+    cat('- - -',my_file,'- - -\n')
     cat(round(mean(unlist(lapply(tmp[[my_file]], function(x) length(unlist(strsplit(x,split=' ')))))),2),'\n')
   }
   
 }
 
 # = = = duplicate words = = =
-
+cat(" = = = = = = = = = Compute repetitions = = = = = = = = = ")
 n_top_words = 500
 
 for (a_t in c('abstracts','titles')){
@@ -62,7 +73,7 @@ for (a_t in c('abstracts','titles')){
       any(to_test>1) # is there at least one repeated word?
     }))))/length(tmp[[my_file]]),2)
     
-    cat('= = =',my_file,'= = =\n')
+    cat('- - -',my_file,'- - -\n')
     cat(perc_rep,'\n')
     
   }
