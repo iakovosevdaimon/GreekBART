@@ -134,6 +134,8 @@ Use "src/summarization/generate_summary.py" and "src/summarization/calculate_sco
 Finally, we can execute the "src/summarization/models_statistics.r" script to compute statistics on the generated summaries, such as their length and the percentage of repetitions relative to their reference summaries.
 
 
+You can find our demo [HERE](http://nlp.polytechnique.fr/greekbart#greek)
+
 ```
 
 If you use the code or any of the models, you can cite the following paper:
