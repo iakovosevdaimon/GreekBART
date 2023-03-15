@@ -70,16 +70,29 @@ elif args.task == "NLI":
                 predictions.append([prediction_label])
                 gold_preds.append([gold])
 else:
-    with open(os.path.join(args.path,'./data/processed/test.sent'), 'r') as fr, open(os.path.join(args.path,'./data/processed/test.label'), 'r') as fr_l:
-        for line, line_l,  in zip(fr, fr_l):
-            if line.strip() and line_l.strip():
-                sent1 = line.strip()
-                gold = line_l.strip()
-                tokens = greekbart.encode(sent1, add_if_not_exist=False)
-                prediction = greekbart.predict('sentence_classification_head', tokens).argmax().item()
-                prediction_label = int(label_fn(prediction))
-                predictions.append([prediction_label])
-                gold_preds.append([gold])
+    if task_folder.contains("Macedonia"):
+        with open(os.path.join(args.path,'./data/processed/test.sent'), 'r') as fr, open(os.path.join(args.path,'./data/processed/test.label'), 'r') as fr_l:
+            for line, line_l,  in zip(fr, fr_l):
+                if line.strip() and line_l.strip():
+                    sent1 = line.strip()
+                    gold = line_l.strip()
+                    tokens = greekbart.encode(sent1, add_if_not_exist=False)
+                    prediction = greekbart.predict('sentence_classification_head', tokens).argmax().item()
+                    prediction_label = int(label_fn(prediction))
+                    predictions.append([prediction_label])
+                    gold_preds.append([gold])
+    else:
+        with open(os.path.join(args.path,'./data/test.sent'), 'r') as fr, open(os.path.join(args.path,'./data/test.label'), 'r') as fr_l:
+            for line, line_l,  in zip(fr, fr_l):
+                if line.strip() and line_l.strip():
+                    sent1 = line.strip()
+                    gold = line_l.strip()
+                    tokens = greekbart.encode(sent1, add_if_not_exist=False)
+                    prediction = greekbart.predict('sentence_classification_head', tokens).argmax().item()
+                    prediction_label = int(label_fn(prediction))
+                    predictions.append([prediction_label])
+                    gold_preds.append([gold])
+
 
 metric = load_metric("seqeval")
 result = metric.compute(predictions=predictions, references=gold_preds)
