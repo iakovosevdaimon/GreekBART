@@ -62,7 +62,7 @@ Then by running the "src/preprocess/create_deduplication_script.py" code and the
 
 After the formation of the corpus, we executed the "src/pretrain/all_in_one_script.sh" to perform several tasks. Firstly, we divide the corpus into training and validation sets. Next, we tokenize and binarize our dataset. Finally, we initiate the pretraining of our model.
 
-For more details about the used tokenizer, see[LINK](https://github.com/google/sentencepiece)
+For more details about the used tokenizer, see [LINK](https://github.com/google/sentencepiece)
 
 ### Discriminative Tasks
 
