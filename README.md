@@ -140,5 +140,13 @@ You can find our demo [HERE](http://nlp.polytechnique.fr/greekbart#greek)
 
 If you use the code or any of the models, you can cite the following paper:
 ```
+@misc{evdaimon2023greekbart,
+      title={GreekBART: The First Pretrained Greek Sequence-to-Sequence Model}, 
+      author={Iakovos Evdaimon and Hadi Abdine and Christos Xypolopoulos and Stamatis Outsios and Michalis Vazirgiannis and Giorgos Stamou},
+      year={2023},
+      eprint={2304.00869},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 
 ```
