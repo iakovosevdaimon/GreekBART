@@ -148,6 +148,3 @@ If you use the code or any of the models, you can cite the following paper:
       primaryClass={cs.CL}
 }
 ```
-
-
-```
