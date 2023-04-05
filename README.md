@@ -136,9 +136,8 @@ Finally, we can execute the "src/summarization/models_statistics.r" script to co
 
 You can find our demo [HERE](http://nlp.polytechnique.fr/greekbart#greek)
 
-```
-
 If you use the code or any of the models, you can cite the following paper:
+
 ```
 @misc{evdaimon2023greekbart,
       title={GreekBART: The First Pretrained Greek Sequence-to-Sequence Model}, 
@@ -148,5 +147,7 @@ If you use the code or any of the models, you can cite the following paper:
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
+```
+
 
 ```
